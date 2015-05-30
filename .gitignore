@@ -1,0 +1,14 @@
+/yii
+/yii.bat
+.idea
+/vendor
+composer.phar
+composer.lock
+/config/params-local.php
+/config/db-local.php
+/runtime
+/web/assets
+npm-debug.log
+assets/*
+web/uploads/
+.idea/*
