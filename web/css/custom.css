@@ -1,0 +1,35 @@
+.input_error, .error {
+    font-size: 13px;
+    color: #ff0000;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > p {
+    font-size: 14px;
+}
+
+.signup-form-access label {
+    width: 100%;
+}
+
+.signup-form-access .icheckbox_minimal-blue {
+    margin-right: 10px;
+    margin-top: -4px;
+}
+
+.add_photo_input {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    visibility: hidden;
+}
+
+img.avatar {
+    max-width: 200px;
+    max-height: 200px;
+    margin-top: 10px;
+}
+
+#usersTable .glyphicon-remove {
+    color: #ff0000;
+    margin-left: 5px;
+}

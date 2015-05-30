@@ -1,0 +1,84 @@
+/*Operations*/
+.handbook-table {
+    max-width: 30%;
+}
+
+.modal-backdrop {
+    z-index: 0;
+}
+
+.form-field {
+    width: 270px;
+}
+
+.handbook-row {
+    word-wrap: break-word;
+    max-width: 300px;
+    width: 300px;
+}
+
+.handbook-row-button {
+    text-align: center;
+    min-width: 140px;
+}
+
+.handbook-edit-button {
+    text-align: center;
+    min-width: 70px;
+}
+
+button.show {
+    width: 130px;
+    height: 24px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/*Color notification*/
+.notification-row {
+    word-wrap: break-word;
+    max-width: 300px;
+    width: 300px;
+}
+
+.color-row {
+    word-wrap: break-word;
+    max-width: 50px;
+    width: 50px;
+}
+
+.badge-color {
+    width: 60%;
+    height: 60%;
+    display: block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    white-space: nowrap;
+    background-color: #777;
+    margin: 0 auto;
+}
+
+.sp-container .sp-button-container {
+    display: none;
+}
+
+/*Fuel consumption*/
+.handbook-consumption-edit {
+    text-align: center;
+    min-width: 150px;
+    max-width: 150px;
+}
+
+.handbook-consumption {
+    text-align: center;
+    min-width: 130px;
+    max-width: 130px;
+}
+
+.fuel-consumption-raw {
+    width: 20%;
+}

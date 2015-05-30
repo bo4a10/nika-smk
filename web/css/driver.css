@@ -1,0 +1,11 @@
+.submit {
+    width: 170px;
+    margin-left: 40px;
+    float: right;
+}
+
+.error_message {
+    float: right;
+    margin-right: 10px;
+    color: #721c15;
+}

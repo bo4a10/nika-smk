@@ -1,0 +1,11 @@
+.user-groups. user-group-index .modal-dialog {
+    z-index: 1050;
+}
+
+.modal-dialog {
+    z-index: 1050;
+}
+
+.user-groups .group-users-form .group-access-checkbox label {
+    width: 100%;
+}
