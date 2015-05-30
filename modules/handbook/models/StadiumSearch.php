@@ -5,12 +5,12 @@ namespace app\modules\handbook\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\modules\handbook\models\City;
+use app\modules\handbook\models\Stadium;
 
 /**
- * CitySearch represents the model behind the search form about `app\modules\handbook\models\City`.
+ * StadiumSearch represents the model behind the search form about `app\modules\handbook\models\Stadium`.
  */
-class CitySearch extends City
+class StadiumSearch extends Stadium
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class CitySearch extends City
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['city_name'], 'safe'],
+            [['id', 'city_id'], 'integer'],
+            [['stadium_name'], 'safe'],
         ];
     }
 
@@ -41,7 +41,9 @@ class CitySearch extends City
      */
     public function search($params)
     {
-        $query = City::find();
+        $query = Stadium::find()
+            ->select('stadium.id, stadium.stadium_name, city.city_name')
+            ->leftJoin('city', 'city.id=stadium.city_id');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -60,9 +62,10 @@ class CitySearch extends City
 
         $query->andFilterWhere([
             'id' => $this->id,
+            'city_id' => $this->city_id,
         ]);
 
-        $query->andFilterWhere(['like', 'city_name', $this->city_name]);
+        $query->andFilterWhere(['like', 'stadium_name', $this->stadium_name]);
 
         return $dataProvider;
     }

@@ -2,34 +2,23 @@
 
 namespace app\modules\handbook\controllers;
 
-use app\commons\AbstractController;
-use app\commons\AbstractPages;
 use Yii;
-use app\modules\handbook\models\City;
-use app\modules\handbook\models\CitySearch;
+use app\modules\handbook\models\Stadium;
+use app\modules\handbook\models\StadiumSearch;
+use app\commons\AbstractPages;
+use app\commons\AbstractController;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
 
 /**
- * CityController implements the CRUD actions for City model.
+ * StadiumController implements the CRUD actions for Stadium model.
  */
-class CityController extends AbstractController
+class StadiumController extends AbstractController
 {
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['index', 'create', 'delete', 'update'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ]
-                ],
-            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -40,14 +29,14 @@ class CityController extends AbstractController
     }
 
     /**
-     * Lists all City models.
+     * Lists all Stadium models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $this->currentPages = AbstractPages::PAGES_HANDBOOK_CITY;
+        $this->currentPages = AbstractPages::PAGES_HANDBOOK_STADIUM;
 
-        $searchModel = new CitySearch();
+        $searchModel = new StadiumSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -57,28 +46,16 @@ class CityController extends AbstractController
     }
 
     /**
-     * Displays a single City model.
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionView($id)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
-    }
-
-    /**
-     * Creates a new City model.
+     * Creates a new Stadium model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new City();
+        $model = new Stadium();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -87,7 +64,7 @@ class CityController extends AbstractController
     }
 
     /**
-     * Updates an existing City model.
+     * Updates an existing Stadium model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -97,7 +74,7 @@ class CityController extends AbstractController
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -106,7 +83,7 @@ class CityController extends AbstractController
     }
 
     /**
-     * Deletes an existing City model.
+     * Deletes an existing Stadium model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -119,15 +96,15 @@ class CityController extends AbstractController
     }
 
     /**
-     * Finds the City model based on its primary key value.
+     * Finds the Stadium model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return City the loaded model
+     * @return Stadium the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = City::findOne($id)) !== null) {
+        if (($model = Stadium::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

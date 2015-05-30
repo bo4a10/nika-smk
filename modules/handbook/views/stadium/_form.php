@@ -4,15 +4,19 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\modules\handbook\models\City */
+/* @var $model app\modules\handbook\models\Stadium */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="city-form">
+<div class="stadium-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'city_name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'stadium_name')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'city_id')->dropDownList(
+        $model->getAllCity()
+    ) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Добавить' : 'Редактировать', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
