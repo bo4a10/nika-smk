@@ -7,6 +7,7 @@ use app\modules\user\models\User;
 use app\modules\wialon\models\Wialon;
 use app\modules\wialon\models\WialonError;
 use Yii;
+use yii\base\Security;
 
 /**
  * LoginForm is the model behind the login form.
@@ -50,9 +51,16 @@ class LoginForm extends AbstractForm
 	public function login()
 	{
 		if ($this->validate()) {
-			$user    = $this->getUser();
-			$isLogin = Yii::$app->user->login($user, $this->rememberMe ? Yii::$app->params['rememberMe'] : 0);
+			$user = $this->getUser();
 
+			if (!$user) {
+				$this->addError('username', 'Неверное имя пользователя');
+				return false;
+			}
+
+//			var_dump(Security::validatePassword($_POST['LoginForm']['password'], $user->password_hash));exit;
+
+			$isLogin = Yii::$app->user->login($user, $this->rememberMe ? Yii::$app->params['rememberMe'] : 0);
 			if ($isLogin) {
 				return $isLogin;
 			} else {
