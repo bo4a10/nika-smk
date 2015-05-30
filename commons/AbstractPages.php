@@ -27,12 +27,13 @@ class AbstractPages
     const PAGES_DRIVER_CREATE         = 'create';
     const PAGES_DRIVER_GROUP          = 'group';
 
-    const PAGES_HANDBOOK_CITY         = 'city';
-    const PAGES_HANDBOOK_STADIUM      = 'stadium';
-	const PAGES_HANDBOOK_MEASURE_UNIT = 'measure_unit';
-	const PAGES_HANDBOOK_INDICATOR    = 'indicators';
-	const PAGES_HANDBOOK_FC           = 'football-club';
-	const PAGES_HANDBOOK_FC_ADD       = 'add-football-club';
-	const PAGES_INDICATORS_FC         = 'add-indicator-to-fc';
-	const PAGES_INDICATORS_MIN_MAX    = 'add-indicator-min-max-fc';
+    const PAGES_HANDBOOK_CITY                = 'city';
+    const PAGES_HANDBOOK_STADIUM             = 'stadium';
+	const PAGES_HANDBOOK_MEASURE_UNIT        = 'measure_unit';
+	const PAGES_HANDBOOK_INDICATOR           = 'indicators';
+	const PAGES_FC                           = 'football-club';
+	const PAGES_FC_ADD                       = 'add-football-club';
+	const PAGES_INDICATORS_FC                = 'add-indicator-to-fc';
+	const PAGES_INDICATORS_MIN_MAX           = 'add-indicator-min-max-fc';
+	const PAGES_FC_ADD_CURRENT_INDICATORS    = 'add-indicator-fc-current';
 }

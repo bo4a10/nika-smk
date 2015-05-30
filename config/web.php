@@ -32,9 +32,6 @@ $config = [
 		'user'     => [
 			'class' => 'app\modules\user\Module',
 		],
-		'objects'     => [
-			'class' => 'app\modules\objects\Module',
-		],
 		'handbook'     => [
 			'class' => 'app\modules\handbook\Module',
 		],
@@ -43,9 +40,9 @@ $config = [
 			'host'   => 'sdk.overseer.ua',
 			'schema' => 'http',
 		],
-        'driver'     => [
-            'class' => 'app\modules\driver\Module',
-        ],
+		'indicators' => [
+			'class' => 'app\modules\indicators\Module',
+		],
         'gridview' =>  [
             'class' => '\kartik\grid\Module'
         ],

@@ -34,7 +34,8 @@
         "kartik-v/yii2-widget-colorinput": "*",
         "fury93/yii2-dual-list-box": "dev-master",
         "voskobovich/yii2-many-many-behavior": "3.0.1",
-        "kartik-v/yii2-widgets": "*"
+        "kartik-v/yii2-widgets": "*",
+        "kartik-v/yii2-widget-datepicker": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

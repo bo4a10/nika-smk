@@ -11,7 +11,7 @@ class m150523_191252_create_table_indicators_values extends Migration
             'id'           => Schema::TYPE_PK,
             'fc_id'        => Schema::TYPE_INTEGER . ' NOT NULL',
             'indicator_id' => Schema::TYPE_INTEGER . ' NOT NULL',
-            'date'         => Schema::TYPE_DATETIME,
+            'date'         => Schema::TYPE_DATE,
             'value'        => Schema::TYPE_INTEGER . ' NOT NULL'
         ]);
 

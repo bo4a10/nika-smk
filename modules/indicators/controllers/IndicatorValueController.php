@@ -1,19 +1,19 @@
 <?php
 
-namespace app\modules\handbook\controllers;
+namespace app\modules\indicators\controllers;
 
-use app\commons\AbstractPages;
 use Yii;
-use app\modules\handbook\models\FootballClub;
-use app\modules\handbook\models\FootballClubSearch;
+use app\modules\indicators\models\IndicatorValue;
+use app\modules\indicators\models\IndicatorValueSearch;
 use app\commons\AbstractController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\commons\AbstractPages;
 
 /**
- * FootballClubController implements the CRUD actions for FootballClub model.
+ * IndicatorValueController implements the CRUD actions for IndicatorValue model.
  */
-class FootballClubController extends AbstractController
+class IndicatorValueController extends AbstractController
 {
     public function behaviors()
     {
@@ -28,14 +28,14 @@ class FootballClubController extends AbstractController
     }
 
     /**
-     * Lists all FootballClub models.
+     * Lists all IndicatorValue models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $this->currentPages = AbstractPages::PAGES_FC;
+        $this->currentPages = AbstractPages::PAGES_INDICATORS_FC;
 
-        $searchModel = new FootballClubSearch();
+        $searchModel = new IndicatorValueSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,18 +45,16 @@ class FootballClubController extends AbstractController
     }
 
     /**
-     * Creates a new FootballClub model.
+     * Creates a new IndicatorValue model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $this->currentPages = AbstractPages::PAGES_FC_ADD;
-
-        $model = new FootballClub();
+        $model = new IndicatorValue();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+            return $this->redirect('index');
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -65,7 +63,7 @@ class FootballClubController extends AbstractController
     }
 
     /**
-     * Updates an existing FootballClub model.
+     * Updates an existing IndicatorValue model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -75,7 +73,7 @@ class FootballClubController extends AbstractController
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+            return $this->redirect('index');
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -84,7 +82,7 @@ class FootballClubController extends AbstractController
     }
 
     /**
-     * Deletes an existing FootballClub model.
+     * Deletes an existing IndicatorValue model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -97,15 +95,15 @@ class FootballClubController extends AbstractController
     }
 
     /**
-     * Finds the FootballClub model based on its primary key value.
+     * Finds the IndicatorValue model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return FootballClub the loaded model
+     * @return IndicatorValue the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = FootballClub::findOne($id)) !== null) {
+        if (($model = IndicatorValue::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

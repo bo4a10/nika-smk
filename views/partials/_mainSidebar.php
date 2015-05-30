@@ -70,8 +70,8 @@ use app\commons\Url;
 			</li>
 
 			<li class="<?php if (in_array(Yii::$app->controller->currentPages, [
-				AbstractPages::PAGES_HANDBOOK_FC,
-				AbstractPages::PAGES_HANDBOOK_FC_ADD
+				AbstractPages::PAGES_FC,
+				AbstractPages::PAGES_FC_ADD
 			])) { echo 'active';} ?> treeview">
 				<a href="<?php echo Url::to('/handbook'); ?>">
 					<i class="fa fa-soccer-ball-o"></i>
@@ -79,12 +79,12 @@ use app\commons\Url;
 					<i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li class="<?php if (Yii::$app->controller->currentPages == AbstractPages::PAGES_HANDBOOK_FC) echo 'active'; ?>">
+					<li class="<?php if (Yii::$app->controller->currentPages == AbstractPages::PAGES_FC) echo 'active'; ?>">
 						<a href="<?php echo Url::to('/handbook/football-club'); ?>">
 							<i class="fa fa-circle-o"></i><?php echo Yii::t('main', 'Все'); ?>
 						</a>
 					</li>
-					<li class="<?php if (Yii::$app->controller->currentPages == AbstractPages::PAGES_HANDBOOK_FC_ADD) echo 'active'; ?>">
+					<li class="<?php if (Yii::$app->controller->currentPages == AbstractPages::PAGES_FC_ADD) echo 'active'; ?>">
 						<a href="<?php echo Url::to('/handbook/football-club/create'); ?>">
 							<i class="fa fa-circle-o"></i><?php echo Yii::t('main', 'Добавить'); ?>
 						</a>
@@ -94,7 +94,8 @@ use app\commons\Url;
 
 			<li class="<?php if (in_array(Yii::$app->controller->currentPages, [
 				AbstractPages::PAGES_INDICATORS_FC,
-				AbstractPages::PAGES_INDICATORS_MIN_MAX
+				AbstractPages::PAGES_INDICATORS_MIN_MAX,
+				AbstractPages::PAGES_FC_ADD_CURRENT_INDICATORS
 			])) { echo 'active';} ?> treeview">
 				<a href="<?php echo Url::to('/handbook'); ?>">
 					<i class="fa fa-tasks"></i>
@@ -102,14 +103,19 @@ use app\commons\Url;
 					<i class="fa fa-angle-left pull-right"></i>
 				</a>
 				<ul class="treeview-menu">
-					<li class="<?php if (Yii::$app->controller->currentPages == AbstractPages::PAGES_HANDBOOK_FC) echo 'active'; ?>">
-						<a href="<?php echo Url::to('/handbook/football-club'); ?>">
+					<li class="<?php if (Yii::$app->controller->currentPages == AbstractPages::PAGES_INDICATORS_FC) echo 'active'; ?>">
+						<a href="<?php echo Url::to('/indicators/indicator-value'); ?>">
 							<i class="fa fa-circle-o"></i><?php echo Yii::t('main', 'Показатели ФК'); ?>
 						</a>
 					</li>
-					<li class="<?php if (Yii::$app->controller->currentPages == AbstractPages::PAGES_HANDBOOK_FC_ADD) echo 'active'; ?>">
-						<a href="<?php echo Url::to('/handbook/football-club/create'); ?>">
+					<li class="<?php if (Yii::$app->controller->currentPages == AbstractPages::PAGES_INDICATORS_MIN_MAX) echo 'active'; ?>">
+						<a href="<?php echo Url::to('/indicators/indicator-limit'); ?>">
 							<i class="fa fa-circle-o"></i><?php echo Yii::t('main', 'Ограничения'); ?>
+						</a>
+					</li>
+					<li class="<?php if (Yii::$app->controller->currentPages == AbstractPages::PAGES_FC_ADD_CURRENT_INDICATORS) echo 'active'; ?>">
+						<a href="<?php echo Url::to('/indicators/indicator-curent'); ?>">
+							<i class="fa fa-circle-o"></i><?php echo Yii::t('main', 'Показатели Ника СМС'); ?>
 						</a>
 					</li>
 				</ul>
