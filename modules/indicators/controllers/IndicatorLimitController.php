@@ -51,6 +51,7 @@ class IndicatorLimitController extends AbstractController
      */
     public function actionCreate()
     {
+        $this->currentPages = AbstractPages::PAGES_INDICATORS_MIN_MAX;
         $model = new IndicatorLimit();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -70,6 +71,7 @@ class IndicatorLimitController extends AbstractController
      */
     public function actionUpdate($id)
     {
+        $this->currentPages = AbstractPages::PAGES_INDICATORS_MIN_MAX;
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

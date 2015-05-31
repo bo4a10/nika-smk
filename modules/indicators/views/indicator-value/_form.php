@@ -20,7 +20,6 @@ use kartik\date\DatePicker;
         $model->getAllIndicators()
     ) ?>
 
-    <?= Html::label('Дата') ?>
     <?= $form->field($model, 'date')->widget(DatePicker::className(), [
         'name' => 'date',
         'value' => $model->date,

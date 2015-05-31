@@ -51,6 +51,7 @@ class IndicatorValueController extends AbstractController
      */
     public function actionCreate()
     {
+        $this->currentPages = AbstractPages::PAGES_INDICATORS_FC;
         $model = new IndicatorValue();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -70,6 +71,7 @@ class IndicatorValueController extends AbstractController
      */
     public function actionUpdate($id)
     {
+        $this->currentPages = AbstractPages::PAGES_INDICATORS_FC;
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
